@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <br>
+    <br>
+   
+  </div>
+  <div class="row">
+    <div class="col-md-12 centerDiv">
+      <p id="timer">{{this.timeleft}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 centerDiv">
+        <button type="button" class="btn btn-success" size="lg" (click)="this.startTimer()">
+          Start
+        </button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="button" class="btn btn-danger" size="lg" (click)="this.stopTimer()">
+          Stop
+        </button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="button" class="btn btn-light" size="lg" (click)="this.resetTimer()">
+          Reset
+        </button>
+    </div>
+  </div>
+</div>
