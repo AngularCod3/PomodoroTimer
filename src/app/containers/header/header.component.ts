@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LogtrackerService } from 'src/app/services/logtracker.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private logTracker: LogtrackerService) { }
 
   ngOnInit() {
+  }
+
+  showLog(){
+    this.logTracker.showLog();
   }
 
 }
