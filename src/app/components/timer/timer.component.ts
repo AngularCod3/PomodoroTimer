@@ -1,6 +1,8 @@
-import { Component, OnInit, EventEmitter, Output, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, ChangeDetectorRef, ViewChild } from '@angular/core';
 import * as moment from "moment";
 import { LogtrackerService } from 'src/app/services/logtracker.service';
+import { ModalDirective } from 'angular-bootstrap-md';
+
 
 @Component({
   selector: 'app-timer',
@@ -9,7 +11,7 @@ import { LogtrackerService } from 'src/app/services/logtracker.service';
 })
 export class TimerComponent implements OnInit {
 
-  pomodoro_minutes = 1;
+  pomodoro_minutes = 25;
   pause = false; //is timer paused
   reset = true;
   counter;
@@ -17,6 +19,9 @@ export class TimerComponent implements OnInit {
   deadLine:Date;
   interval:number;
   timeleft:string;
+
+  @ViewChild('timerFinishModal', {static: true})
+  timerFinishModal: ModalDirective;
 
   constructor(private cdref: ChangeDetectorRef, 
               private logTracker: LogtrackerService) { }
@@ -62,6 +67,12 @@ export class TimerComponent implements OnInit {
         }
         pomodoroLog.push({startTime: this.logTracker.startTime, endTime: endTime, description: ""});
         localStorage.setItem('pomodoroLog', JSON.stringify(pomodoroLog));
+        let alarm = new Audio();
+        alarm.src = "assets/sounds/alarm.mp3";
+        alarm.load();
+        alarm.play();
+        this.timerFinishModal.show();
+
 
       }
       let minutes = Math.floor(totalSecs/60);

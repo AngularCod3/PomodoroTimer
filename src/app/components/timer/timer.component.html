@@ -11,15 +11,44 @@
   </div>
   <div class="row">
     <div class="col-md-12 centerDiv">
-        <button type="button" class="btn btn-success" size="lg" (click)="this.startTimer()">
+        <button type="button" class="btn btn-dark-green" size="lg" (click)="this.startTimer()">
           Start
         </button>&nbsp;&nbsp;&nbsp;&nbsp;
-        <button type="button" class="btn btn-danger" size="lg" (click)="this.stopTimer()">
+        <button type="button" class="btn btn-deep-orange" size="lg" (click)="this.stopTimer()">
           Stop
         </button>&nbsp;&nbsp;&nbsp;&nbsp;
-        <button type="button" class="btn btn-light" size="lg" (click)="this.resetTimer()">
+        <button type="button" class="btn btn-blue-grey" size="lg" (click)="this.resetTimer()">
           Reset
         </button>
+    </div>
+  </div>
+</div>
+
+
+
+<div mdbModal #timerFinishModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-9">
+                <h4 class="modal-title w-100" id="myModalLabel">Timeout</h4>
+            </div>
+            <div class="col-md-3" style="display: flex; flex-direction: column; align-items: center">
+                <button type="button" class="close" aria-label="Close" (click)="timerFinishModal.hide()">
+                  <span aria-hidden="true">×</span>
+                </button>
+            </div>
+          </div>
+        </div>
+        
+        
+      </div>
+      <div class="modal-body">
+        Well done. Click reset to reset the timer.
+      </div>
+      
     </div>
   </div>
 </div>

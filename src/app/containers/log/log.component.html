@@ -1,5 +1,5 @@
 <div mdbModal #logModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close pull-right" aria-label="Close" (click)="logModal.hide()">
@@ -23,11 +23,12 @@
             </tr>
           </tbody>
         </table>
-        <button type="button" mdbBtn color="secondary" size="sm" class="waves-light" aria-label="Close" (click)="this.clearEntries()" mdbWavesEffect>Clear Entries</button>
+        
       </div>
       <div class="modal-footer">
-        <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="logModal.hide()" mdbWavesEffect>Close</button>
-        <button type="button" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect>Save changes</button>
+          <button type="button" mdbBtn color="deep-orange" size="sm" class="waves-light" aria-label="Close" (click)="this.clearEntries()" mdbWavesEffect>Clear Entries</button>
+        <button type="button" mdbBtn color="secondary" size="sm" class="waves-light" aria-label="Close" (click)="logModal.hide()" mdbWavesEffect>Close</button>
+        
       </div>
     </div>
   </div>
