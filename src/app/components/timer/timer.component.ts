@@ -27,9 +27,17 @@ export class TimerComponent implements OnInit {
               private logTracker: LogtrackerService) { }
 
   ngOnInit() {
-
+    if(localStorage.getItem('pomodoroSettings')!==null){
+      let pomodoroSettings = JSON.parse(localStorage.getItem('pomodoroSettings'));
+      this.pomodoro_minutes = pomodoroSettings.pomodoroTime;
+    }
     window.onbeforeunload = ()=>this.resetTimer();
     this.resetTimer();
+    this.logTracker.pomodoroTimeChange.subscribe(value=>{
+      let pomodoroSettings = JSON.parse(localStorage.getItem('pomodoroSettings'));
+      this.pomodoro_minutes = pomodoroSettings.pomodoroTime;
+      this.resetTimer();
+    });
 
   }
 

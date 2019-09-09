@@ -1,0 +1,29 @@
+<div mdbModal #settingsModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <!--div class="modal-header">
+        <button type="button" class="close pull-right" aria-label="Close" (click)="settingsModal.hide()">
+          <span aria-hidden="true">×</span>
+        </button>
+        <h4 class="modal-title w-100" id="myModalLabel">Pomodoro Log</h4>
+      </div-->
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <h3>Custom Time</h3>
+            
+          </div>
+          <div class="row">
+            <span style="padding-right:2rem;">Pomodoro Timer:</span>
+            <input id="pomodoroTime" type="number" min="1" [value]="this.pomodorotime"/>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+          <button type="button" mdbBtn color="deep-orange" size="sm" class="waves-light" aria-label="Close" (click)="this.saveSettings()" mdbWavesEffect>Save</button>
+        <button type="button" mdbBtn color="secondary" size="sm" class="waves-light" aria-label="Close" (click)="settingsModal.hide()" mdbWavesEffect>Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>

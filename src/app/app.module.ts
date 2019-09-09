@@ -9,6 +9,7 @@ import { HeaderComponent } from './containers/header/header.component';
 import { TimerComponent } from './components/timer/timer.component';
 import { LogComponent } from './containers/log/log.component';
 import { LogtrackerService } from './services/logtracker.service';
+import { SettingsComponent } from './containers/settings/settings.component';
 
 
 
@@ -20,7 +21,8 @@ import { LogtrackerService } from './services/logtracker.service';
     HomeComponent,
     HeaderComponent,
     TimerComponent,
-    LogComponent
+    LogComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
