@@ -1,7 +1,7 @@
 # PomodoroTimer
 
-The live version of the website can be accessed here:
-https://angularcod3.github.io/PomodoroTimer/
+The live version of the website can be accessed here:<br>
+https://javapyscript.github.io/PomodoroTimer/
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.2.
 
